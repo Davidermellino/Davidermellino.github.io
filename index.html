@@ -198,6 +198,24 @@
 
   /* Hero */
   .hero { padding-block: var(--space-4) var(--space-3); }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-3);
+    align-items: start;
+  }
+  .hero-portrait {
+    order: 2;
+    width: clamp(84px, 4vw + 60px, 140px);
+    height: clamp(84px, 4vw + 60px, 140px);
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+  }
+  @media (max-width: 640px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-portrait { order: -1; width: 72px; height: 72px; }
+  }
   .hero h1 {
     font-size: clamp(2.25rem, 1.8rem + 2.5vw, 3.5rem);
     font-weight: 700;
@@ -478,6 +496,9 @@
 <main id="main">
 
   <section class="hero wrap" aria-labelledby="hero-heading">
+   <div class="hero-grid">
+    <img class="hero-portrait" src="Davide_img.jpg" alt="Portrait of Davide Ermellino" width="800" height="800">
+    <div class="hero-content">
     <h1 id="hero-heading">Davide Ermellino</h1>
     <p class="tagline">MSc Data Science student, machine learning and backend engineering.</p>
     <p class="lede">Three research and industry roles writing production Python: LLM code-generation agents, computer vision pipelines, geospatial data infrastructure.</p>
@@ -491,6 +512,8 @@
       <a href="https://www.linkedin.com/in/davide-ermellino/">LinkedIn</a>
       <a class="primary" href="Davide_Ermellino_CV.pdf">Download CV (PDF)</a>
     </div>
+    </div>
+   </div>
   </section>
 
   <section id="experience" aria-labelledby="experience-heading">
