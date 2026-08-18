@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Davide Ermellino — Software Engineer &amp; ML Researcher</title>
+<meta name="description" content="Davide Ermellino — MSc Data Science student focused on machine learning and backend engineering. Production Python across LLM code-generation agents, computer vision pipelines, and geospatial data infrastructure.">
+<link rel="canonical" href="https://davidermellino.github.io/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Davide Ermellino">
+<meta property="og:title" content="Davide Ermellino — Software Engineer &amp; ML Researcher">
+<meta property="og:description" content="MSc Data Science student focused on machine learning and backend engineering. Production Python across LLM agents, computer vision, and geospatial data infrastructure.">
+<meta property="og:url" content="https://davidermellino.github.io/">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Davide Ermellino — Software Engineer &amp; ML Researcher">
+<meta name="twitter:description" content="MSc Data Science student focused on machine learning and backend engineering.">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Davide Ermellino",
+  "url": "https://davidermellino.github.io/",
+  "email": "mailto:ermellinodavide@gmail.com",
+  "jobTitle": "MSc Data Science Student",
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of Cagliari"
+  },
+  "sameAs": [
+    "https://github.com/Davidermellino",
+    "https://www.linkedin.com/in/davide-ermellino/"
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --bg: #0c1015;
+    --surface: #15181f;
+    --text: #e4e8ef;
+    --text-muted: #9399a2;
+    --border: #2e333b;
+    --accent: #f4a34b;
+    --accent-contrast: #181008;
+
+    --font-display: 'Space Grotesk', 'Inter', -apple-system, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+
+    --max-w: 880px;
+    --space-1: clamp(0.5rem, 0.45rem + 0.25vw, 0.75rem);
+    --space-2: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
+    --space-3: clamp(1.75rem, 1.5rem + 1vw, 2.5rem);
+    --space-4: clamp(3rem, 2.5rem + 2vw, 5rem);
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f8fafd;
+      --surface: #ffffff;
+      --text: #171b20;
+      --text-muted: #474d57;
+      --border: #caced4;
+      --accent: #a53e00;
+      --accent-contrast: #fffaf6;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  img, svg { max-width: 100%; display: block; }
+
+  .skip-link {
+    position: absolute;
+    left: 0;
+    top: -100%;
+    background: var(--accent);
+    color: var(--accent-contrast);
+    padding: 0.75rem 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    z-index: 100;
+    transition: top 0.15s ease;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  a:hover { text-decoration-thickness: 2px; }
+
+  .wrap {
+    max-width: var(--max-w);
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 2rem);
+  }
+
+  /* Header */
+  header.site-header {
+    padding-block: var(--space-2);
+    border-bottom: 1px solid var(--border);
+  }
+  header.site-header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+  .brand {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.3rem 0.55rem;
+  }
+  .brand:hover { border-color: var(--accent); text-decoration: none; }
+  nav.site-nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--space-2);
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  nav.site-nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-family: var(--font-mono);
+  }
+  nav.site-nav a:hover,
+  nav.site-nav a:focus-visible { color: var(--accent); }
+
+  main { display: block; }
+  section { padding-block: var(--space-4); }
+  section + section { border-top: 1px solid var(--border); }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin: 0;
+  }
+  h2 {
+    font-size: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+    margin-bottom: var(--space-3);
+  }
+  h2 .kicker {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  h3 { font-size: clamp(1.05rem, 1rem + 0.3vw, 1.25rem); font-weight: 600; }
+
+  p { margin: 0 0 1rem; }
+  p:last-child { margin-bottom: 0; }
+
+  ul.plain { list-style: none; margin: 0; padding: 0; }
+
+  /* Hero */
+  .hero { padding-block: var(--space-4) var(--space-3); }
+  .hero h1 {
+    font-size: clamp(2.25rem, 1.8rem + 2.5vw, 3.5rem);
+    font-weight: 700;
+  }
+  .hero .tagline {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: clamp(1.1rem, 1rem + 0.6vw, 1.4rem);
+    color: var(--text-muted);
+    margin-top: var(--space-1);
+    max-width: 42ch;
+  }
+  .hero .lede {
+    max-width: 60ch;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-top: var(--space-2);
+  }
+  .hero .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    margin-top: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .hero .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    margin-top: var(--space-3);
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--border);
+  }
+  .hero .links a {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .hero .links a::after { content: "→"; color: var(--accent); transition: transform 0.15s ease; }
+  .hero .links a:hover::after,
+  .hero .links a:focus-visible::after { transform: translateX(3px); }
+  .hero .links a.primary {
+    color: var(--accent-contrast);
+    background: var(--accent);
+    padding: 0.5rem 0.9rem;
+    border-radius: 4px;
+  }
+  .hero .links a.primary::after { color: var(--accent-contrast); }
+
+  /* Experience timeline */
+  .timeline { position: relative; }
+  .timeline-item {
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--border);
+    padding-bottom: var(--space-3);
+  }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 0.35rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+  .timeline-dates {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .timeline-org {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 0.15rem;
+  }
+  .timeline-item ul {
+    margin: 0.75rem 0 0;
+    padding-left: 1.1rem;
+  }
+  .timeline-item li { margin-bottom: 0.5rem; }
+  .timeline-item li:last-child { margin-bottom: 0; }
+
+  .tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.9rem 0 0;
+    padding: 0;
+  }
+  .tags li {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0.2rem 0.5rem;
+  }
+
+  /* Projects */
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: var(--space-2);
+  }
+  .project-card {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: var(--space-2);
+    background: var(--surface);
+  }
+  .project-card h3 a {
+    color: var(--text);
+    text-decoration: none;
+  }
+  .project-card h3 a:hover,
+  .project-card h3 a:focus-visible { color: var(--accent); }
+  .project-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 0.6rem;
+  }
+
+  .project-list-secondary {
+    margin-top: var(--space-3);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--border);
+  }
+  .project-list-secondary h3 {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: var(--space-2);
+  }
+  .compact-item {
+    padding-block: var(--space-1);
+  }
+  .compact-item + .compact-item { border-top: 1px solid var(--border); }
+  .compact-item a {
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .compact-item a:hover, .compact-item a:focus-visible { color: var(--accent); }
+  .compact-item p { color: var(--text-muted); font-size: 0.92rem; margin-top: 0.3rem; }
+  .compact-item .tags { margin-top: 0.5rem; }
+
+  /* Education */
+  .edu-item + .edu-item { margin-top: var(--space-3); }
+  .edu-item .timeline-dates { margin-bottom: 0.15rem; display: inline-block; }
+  .edu-item .degree { margin-top: 0.15rem; }
+  .edu-item .grade { color: var(--accent); font-weight: 600; }
+  .edu-item .coursework {
+    margin-top: 0.6rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+  .edu-item .coursework span.label {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  /* Skills */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: var(--space-3);
+  }
+  .skills-grid h3 {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+  .skills-grid ul { list-style: none; margin: 0; padding: 0; }
+  .skills-grid li {
+    padding-block: 0.3rem;
+    border-bottom: 1px dotted var(--border);
+    font-size: 0.95rem;
+  }
+  .skills-grid li:last-child { border-bottom: none; }
+
+  /* About */
+  .about-extra {
+    margin-top: var(--space-3);
+    display: grid;
+    gap: var(--space-2);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  }
+  .about-extra > div {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: var(--space-2);
+    background: var(--surface);
+  }
+  .about-extra h3 {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  .about-extra p { font-size: 0.92rem; color: var(--text-muted); }
+
+  /* Footer */
+  footer.site-footer {
+    border-top: 1px solid var(--border);
+    padding-block: var(--space-3);
+  }
+  footer.site-footer .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+  }
+  footer.site-footer .links a {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text);
+    text-decoration: none;
+  }
+  footer.site-footer .links a:hover,
+  footer.site-footer .links a:focus-visible { color: var(--accent); }
+  footer.site-footer .copyright {
+    margin-top: var(--space-2);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="#main" class="brand" aria-label="Davide Ermellino — back to top">DE</a>
+    <nav class="site-nav" aria-label="Section navigation">
+      <ul>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero wrap" aria-labelledby="hero-heading">
+    <h1 id="hero-heading">Davide Ermellino</h1>
+    <p class="tagline">MSc Data Science student, machine learning and backend engineering.</p>
+    <p class="lede">Three research and industry roles writing production Python: LLM code-generation agents, computer vision pipelines, geospatial data infrastructure.</p>
+    <p class="meta-row">
+      <span>Cagliari, Italy → Madrid, Spain (Sep 2026)</span>
+      <span>Italian citizen · EU/EEA work authorized, no sponsorship needed</span>
+    </p>
+    <div class="links">
+      <a href="mailto:ermellinodavide@gmail.com">Email</a>
+      <a href="https://github.com/Davidermellino">GitHub</a>
+      <a href="https://www.linkedin.com/in/davide-ermellino/">LinkedIn</a>
+      <a class="primary" href="Davide_Ermellino_CV.pdf">Download CV (PDF)</a>
+    </div>
+  </section>
+
+  <section id="experience" aria-labelledby="experience-heading">
+    <div class="wrap">
+      <h2 id="experience-heading"><span class="kicker">Reverse chronological</span>Experience</h2>
+      <div class="timeline">
+
+        <article class="timeline-item">
+          <p class="timeline-dates">04/2026 – 07/2026</p>
+          <h3>Data Scientist</h3>
+          <p class="timeline-org">RE/MAX</p>
+          <ul>
+            <li>Built the Python and PostGIS ETL pipeline that feeds the company's property valuation models, normalizing demographic, geospatial and pricing records for all 308 Portuguese municipalities into one queryable dataset.</li>
+            <li>Wrote the spatial joins and geometry validation in EPSG:3763 that reconcile separate national data sources onto a shared municipality key.</li>
+            <li>Shipped a JavaScript and D3.js front end over the pipeline output so analysts could inspect regional trends and model features directly.</li>
+          </ul>
+          <ul class="tags">
+            <li>Python</li><li>PostGIS</li><li>PostgreSQL</li><li>D3.js</li><li>Geospatial</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <p class="timeline-dates">01/2026 – 06/2026</p>
+          <h3>Undergraduate Researcher</h3>
+          <p class="timeline-org">University of Cagliari</p>
+          <ul>
+            <li>Raised compilation rate 53% over the unvalidated baseline by building a Python validation layer for an LLM multi-agent pipeline that generates Unity C# code.</li>
+            <li>Wrote the automated evaluation harness: a ground-truth dataset over planner and executor outputs, gated on a Roslyn compile check, then scored by CodeBLEU and template precision and recall.</li>
+            <li>Benchmarked three validator models across zero-shot, few-shot and skills-based prompting to find the configuration that converged in the fewest feedback rounds.</li>
+          </ul>
+          <ul class="tags">
+            <li>Python</li><li>Multi-agent LLMs</li><li>C#</li><li>Unity</li><li>Evaluation</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <p class="timeline-dates">08/2025 – 01/2026</p>
+          <h3>Undergraduate Researcher</h3>
+          <p class="timeline-org">Universidad de Las Palmas de Gran Canaria</p>
+          <ul>
+            <li>Reached 98% digit accuracy on runner bib recognition by pairing YOLO detection with a vision-language model for the read step, across multiple camera views.</li>
+            <li>Replaced manual bib logging for race organizers and cut identification time 80%.</li>
+          </ul>
+          <ul class="tags">
+            <li>Python</li><li>PyTorch</li><li>YOLO</li><li>Vision-language models</li><li>Computer Vision</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <p class="timeline-dates">10/2024 – 02/2025</p>
+          <h3>Research Assistant</h3>
+          <p class="timeline-org">University of Cagliari</p>
+          <ul>
+            <li>Built a JavaScript graphical user interface for a research project on automatic citation.</li>
+            <li>Developed robot-movement algorithms in Python for an automatic pizza-box stain cutter.</li>
+          </ul>
+          <ul class="tags">
+            <li>Python</li><li>JavaScript</li><li>Robotics</li><li>HCI</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" aria-labelledby="projects-heading">
+    <div class="wrap">
+      <h2 id="projects-heading"><span class="kicker">Public repositories</span>Selected Projects</h2>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <h3><a href="https://github.com/Davidermellino/real-time-red-light-violation-detection">Real-time red-light violation detection</a></h3>
+          <p>Multithreaded Python pipeline that flags vehicles crossing the stop line on red. Four threads pass work through shared buffers: frame capture, batched Ultralytics YOLO detection of light state, stop line and plates, EasyOCR text extraction, and a non-blocking main loop that overlays results and logs violations to CSV.</p>
+          <ul class="tags">
+            <li>Python</li><li>YOLO</li><li>EasyOCR</li><li>OpenCV</li><li>Concurrency</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <h3><a href="https://github.com/Davidermellino/rl-with-panda-gym">Reinforcement learning on PandaGym</a></h3>
+          <p>Implemented DQN with and without a target network, REINFORCE in discrete and continuous form, and DDPG with Hindsight Experience Replay in TensorFlow. DDPG with HER solved both PandaReach and PandaPush. Packaged and published on PyPI as <code>rl-with-panda-gym</code>.</p>
+          <ul class="tags">
+            <li>Python</li><li>TensorFlow</li><li>Deep RL</li><li>PyPI</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <h3><a href="https://github.com/Davidermellino/trec-covid-rag">trec-covid-rag</a></h3>
+          <p>Retrieval-augmented generation over the TREC-COVID collection: corpus indexing, retrieval, re-ranking, and answer generation with LLMs.</p>
+          <ul class="tags">
+            <li>Python</li><li>RAG</li><li>LLMs</li><li>Information Retrieval</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <h3><a href="https://github.com/Davidermellino/DiabetesPredictor">DiabetesPredictor</a></h3>
+          <p>Tkinter desktop app for diabetes risk prediction. Wrote KNN and random forest from scratch and benchmarked them against scikit-learn decision tree, naive Bayes and neural network, behind a preprocessing layer for feature selection, scaling and SMOTE versus undersampling.</p>
+          <ul class="tags">
+            <li>Python</li><li>scikit-learn</li><li>Tkinter</li><li>Classification</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="project-list-secondary">
+        <h3>More repositories</h3>
+
+        <div class="compact-item">
+          <a href="https://github.com/Davidermellino/portugal-wildfire-gis">portugal-wildfire-gis</a>
+          <p>Automated GIS pipeline analyzing wildfire risk and historical burned areas across the 308 Portuguese municipalities.</p>
+          <ul class="tags"><li>Python</li><li>GIS</li><li>PostGIS</li></ul>
+        </div>
+
+        <div class="compact-item">
+          <a href="https://github.com/Davidermellino/Energy-Fraud-Detection-System-based-on-Deep-Learning">Energy-Fraud-Detection-System-based-on-Deep-Learning</a>
+          <p>Recurrent autoencoders for feature extraction combined with DNN, XGBoost and random forest classifiers to detect anomalies in energy consumption.</p>
+          <ul class="tags"><li>Jupyter</li><li>Autoencoders</li><li>XGBoost</li></ul>
+        </div>
+
+        <div class="compact-item">
+          <a href="https://github.com/Davidermellino/Emotion-Recognition-with-EEG-signals">Emotion-Recognition-with-EEG-signals</a>
+          <p>Machine learning system for emotion identification from EEG signals.</p>
+          <ul class="tags"><li>Jupyter</li><li>Signal processing</li><li>ML</li></ul>
+        </div>
+
+        <div class="compact-item">
+          <a href="https://github.com/Davidermellino/Aquarium-Adventures">Aquarium-Adventures</a>
+          <p>Software engineering course project simulating an aquarium environment across a full SDLC: requirements, design, tests, delivery.</p>
+          <ul class="tags"><li>Python</li><li>SDLC</li><li>Testing</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" aria-labelledby="education-heading">
+    <div class="wrap">
+      <h2 id="education-heading"><span class="kicker">Reverse chronological</span>Education</h2>
+
+      <div class="edu-item">
+        <p class="timeline-dates">09/2026 – 07/2028</p>
+        <h3>EIT Digital Master School</h3>
+        <p class="timeline-org">Madrid, ES and Budapest, HU</p>
+        <p class="degree">M.S. Data Science, double degree. Year 1 at Universidad Politécnica de Madrid, Year 2 at Eötvös Loránd University. Minor in Innovation and Entrepreneurship. Expected graduation July 2028.</p>
+        <p class="coursework"><span class="label">Coursework</span>Deep Learning, Information Retrieval, Cloud Computing and Big Data Ecosystems Design, Network Science, Stream Mining.</p>
+      </div>
+
+      <div class="edu-item">
+        <p class="timeline-dates">Completed 07/2026</p>
+        <h3>University of Cagliari</h3>
+        <p class="timeline-org">Cagliari, IT</p>
+        <p class="degree">B.S. Applied Computer Science and Data Analytics. Final grade <span class="grade">110/110 with honours (cum laude)</span> — the top mark in the Italian system.</p>
+        <p class="coursework"><span class="label">Coursework</span>Data Structures and Algorithms, Operating Systems, Software Engineering, Machine Learning, Artificial Intelligence, Big Data.</p>
+      </div>
+
+      <div class="edu-item">
+        <p class="timeline-dates">06/2023 – 09/2023</p>
+        <h3>Aulab</h3>
+        <p class="timeline-org">Bari, IT</p>
+        <p class="degree">Full-Stack Web Developer Bootcamp (400 h) + React Masterclass (50 h).</p>
+        <p class="coursework"><span class="label">Coursework</span>JavaScript, React, PHP/Laravel, HTML/CSS, Agile/Scrum.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" aria-labelledby="skills-heading">
+    <div class="wrap">
+      <h2 id="skills-heading">Skills</h2>
+      <div class="skills-grid">
+        <div>
+          <h3>Languages</h3>
+          <ul>
+            <li>Python</li><li>C</li><li>SQL</li><li>JavaScript</li><li>R</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Frameworks &amp; Libraries</h3>
+          <ul>
+            <li>TensorFlow</li><li>PyTorch</li><li>OpenCV</li><li>Ultralytics YOLO</li><li>EasyOCR</li><li>scikit-learn</li><li>LangChain</li><li>React</li><li>D3.js</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tools &amp; Infrastructure</h3>
+          <ul>
+            <li>PostgreSQL</li><li>PostGIS</li><li>Git</li><li>Unity</li><li>Tkinter</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="about-heading">
+    <div class="wrap">
+      <h2 id="about-heading">About</h2>
+      <p>Davide is an MSc Data Science student focused on machine learning and backend engineering, with three research and industry roles building production Python systems — LLM code-generation agents, computer vision pipelines, and geospatial data infrastructure. Italian citizen, authorized to work in the EU and EEA without sponsorship. Currently based in Cagliari, Italy, relocating to Madrid, Spain in September 2026.</p>
+
+      <div class="about-extra">
+        <div>
+          <h3>Publication</h3>
+          <p>"Learner and Instructor Perceptions of Teaching Industrial Robotics with Artificial Intelligence and Extended Reality" — under review at SIREM 2026.</p>
+        </div>
+        <div>
+          <h3>Recognition</h3>
+          <p>2026 — LeadTheFuture Mentee. Selected for a STEM mentorship non-profit that admits under 15% of applicants.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" aria-label="Contact">
+  <div class="wrap">
+    <div class="links">
+      <a href="mailto:ermellinodavide@gmail.com">ermellinodavide@gmail.com</a>
+      <a href="https://github.com/Davidermellino">github.com/Davidermellino</a>
+      <a href="https://www.linkedin.com/in/davide-ermellino/">linkedin.com/in/davide-ermellino</a>
+      <a href="Davide_Ermellino_CV.pdf">Download CV (PDF)</a>
+    </div>
+    <p class="copyright">© 2026 Davide Ermellino.</p>
+  </div>
+</footer>
+
+</body>
+</html>
