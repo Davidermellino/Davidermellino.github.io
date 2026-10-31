@@ -32,7 +32,7 @@
   "@type": "Person",
   "name": "Davide Ermellino",
   "url": "https://davidermellino.github.io/",
-  "email": "mailto:ermellinodavide@gmail.com",
+  "email": "mailto:ermellinodavide@proton.me",
   "jobTitle": "Research Assistant, Intelligent Systems Group (UPM)",
   "affiliation": {
     "@type": "CollegeOrUniversity",
@@ -72,7 +72,7 @@
 
     --margin: clamp(16px, 2.6vw, 40px);
     --axis: 42%;
-    --gap-section: clamp(96px, 7vw + 48px, 200px);
+    --gap-section: clamp(88px, 5vw + 48px, 144px);
 
     --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
   }
@@ -144,7 +144,7 @@
     display: flex; align-items: center; justify-content: space-between; gap: 24px;
     padding-block: 18px;
   }
-  .wordmark { font-weight: 800; letter-spacing: -0.04em; font-size: 1.25rem; text-decoration: none; }
+  .wordmark { font-weight: 800; letter-spacing: -0.04em; font-size: var(--step-body); text-decoration: none; }
   .site-nav ul { display: flex; gap: clamp(16px, 2vw, 32px); align-items: center; }
   .site-nav ul a { font-weight: 600; text-decoration: none; font-size: var(--step-small); }
   .site-nav ul a:hover { text-decoration: underline; }
@@ -177,8 +177,8 @@
   .tile[aria-pressed="true"] img { filter: none; }
   .tile .label {
     position: absolute; left: 0; right: 0; bottom: 0;
-    padding: 40px 16px 14px;
-    background: linear-gradient(to top, rgba(0,0,0,0.62), rgba(0,0,0,0));
+    padding: 40px var(--margin) 14px;
+    background: linear-gradient(to top, rgba(0,0,0,0.62), rgba(0,0,0,0)); /* taste-skill-ignore: neutral scrim under text on a photo */
     font-weight: 600; font-size: var(--step-body); line-height: 1.2;
   }
   .tile .label span { display: block; font-weight: 400; font-size: var(--step-small); opacity: 0.9; }
@@ -225,13 +225,13 @@
   }
   .results h2 { max-width: 12ch; }
   .figures {
-    display: grid; grid-template-columns: 1fr 1fr;
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: clamp(48px, 6vw, 96px) clamp(24px, 3vw, 56px);
     margin-top: clamp(56px, 6vw, 96px);
   }
   .figure .num {
     display: block;
-    font-size: var(--step-figure); font-weight: 800;
+    font-size: var(--step-title); font-weight: 800;
     letter-spacing: -0.06em; line-height: 0.85;
     font-variant-numeric: tabular-nums;
   }
@@ -241,7 +241,7 @@
   .section { padding-top: var(--gap-section); }
   .section-head { margin-bottom: clamp(40px, 5vw, 80px); }
   .role {
-    padding-block: clamp(28px, 3vw, 44px);
+    padding-block: clamp(22px, 2.2vw, 34px);
   }
   .role + .role { margin-top: 8px; }
   .role:nth-child(odd) { background: transparent; }
@@ -308,7 +308,7 @@
   .skill-list dt { font-weight: 600; }
   .skill-list dd { margin: 2px 0 14px; }
   .publication { background: var(--surface); padding: clamp(24px, 3vw, 40px); grid-column: 1 / -1; }
-  .publication .pub-lead { font-size: clamp(1.375rem, 1.1rem + 1vw, 2rem); line-height: 1.2; letter-spacing: -0.025em; font-weight: 600; max-width: 34ch; }
+  .publication .pub-lead { font-size: var(--step-lead); line-height: 1.2; letter-spacing: -0.025em; font-weight: 600; max-width: 34ch; }
   .publication p + p { margin-top: 16px; color: var(--muted); max-width: 64ch; }
 
   /* Footer: the name returns full width */
@@ -342,11 +342,13 @@
     .place-note .what { grid-column: 1 / -1; }
     .role .side, .school .side { margin-bottom: 10px; }
     .project-spread, .figures, .extras, .more ul { grid-template-columns: 1fr; }
+    .figure { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 24px; align-items: end; }
+    .figure p { margin-top: 0; }
     .project:nth-child(3) { margin-top: 0; }
   }
   @media (max-width: 600px) {
     .mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; height: 38vh; min-height: 260px; }
-    .tile .label { padding: 32px 12px 10px; }
+    .tile .label { padding: 32px var(--margin) 10px; }
     .figures { gap: 48px; }
   }
 
@@ -424,7 +426,7 @@
         <h1 class="title" id="title"><span class="line"><span>Davide</span></span><span class="line"><span>Ermellino</span></span></h1>
         <p class="standfirst" data-rise style="--i:2">Data science student and ML researcher. I build LLM agents, vision systems and data pipelines in Python.</p>
         <div class="actions" data-rise style="--i:3">
-          <a class="button" href="mailto:ermellinodavide@gmail.com">Write to me</a>
+          <a class="button" href="mailto:ermellinodavide@proton.me">Write to me</a>
           <a href="https://github.com/Davidermellino">GitHub</a>
           <a href="https://www.linkedin.com/in/davide-ermellino/">LinkedIn</a>
         </div>
@@ -445,10 +447,6 @@
           <p>Accuracy of the runner bib recognition system I built with YOLO and vision-language models.</p>
         </li>
         <li class="figure" data-rise style="--i:3">
-          <span class="num">−80%</span>
-          <p>Time spent identifying runners by hand, across several camera views at the finish.</p>
-        </li>
-        <li class="figure" data-rise style="--i:4">
           <span class="num">308</span>
           <p>Portuguese municipalities in the dataset I built for RE/MAX real estate valuation models.</p>
         </li>
@@ -505,7 +503,7 @@
         <p class="org" data-rise style="--i:1">Universidad de Las Palmas de Gran Canaria</p>
         <ul data-rise style="--i:2">
           <li>Built a runner bib recognition system with vision-language models that reached 98% accuracy.</li>
-          <li>Combined YOLO detection with VLMs across several camera views, cutting manual runner identification time by 80%.</li>
+          <li>Combined YOLO detection with VLMs across several camera views.</li>
         </ul>
       </div>
     </article>
@@ -528,8 +526,8 @@
       <h2 id="projects-heading" data-rise>Projects</h2>
       <div class="project-spread">
         <article class="project wide" data-rise>
-          <h3><a href="https://github.com/Davidermellino/Energy-Fraud-Detection-System-based-on-Deep-Learning">Energy fraud detection with deep learning</a></h3>
-          <p class="stack">Python, PyTorch</p>
+          <h3><a href="https://github.com/Davidermellino/Energy-Fraud-Detection-System-based-on-Deep-Learning">Energy fraud detection</a></h3>
+          <p class="stack">Deep learning · Python, PyTorch</p>
           <p>A fraud and anomaly detection pipeline on smart meter data. LSTM autoencoders turn five time series per meter (consumption, outages, alarms, maintenance, contract data) into embeddings, and DNN and tree-based classifiers label each meter as regular, anomalous or fraudulent.</p>
           <p>On a heavily imbalanced dataset, a soft-voting DNN ensemble reached 0.57 weighted recall, against 0.03 for the tree-based models.</p>
         </article>
@@ -605,16 +603,12 @@
       <div class="main"><h2 id="more-heading" data-rise>Awards and skills</h2></div>
     </div>
     <div class="extras">
-      <div class="publication" data-rise>
-        <p class="pub-lead">An LLM agent that writes Unity C# code for VR training scenes, and checks that it compiles.</p>
-        <p>Full abstract presented at SIREM; the full paper is to be published in JIMTLT.</p>
-      </div>
-      <div data-rise style="--i:1">
+      <div data-rise>
         <h3>Awards</h3>
         <p><strong>Semifinal winner, EIT Digital Master School Business Challenge</strong>, October 2026. I handled the team’s financial plan for the Wayyo case.</p>
         <p><strong>LeadTheFuture mentee.</strong> Selected by the STEM mentorship non-profit for Italian students, which accepts fewer than 15% of applicants.</p>
       </div>
-      <div data-rise style="--i:2">
+      <div data-rise style="--i:1">
         <h3>Skills</h3>
         <dl class="skill-list">
           <dt>Programming</dt><dd>Python, C, R, SQL, JavaScript</dd>
@@ -632,7 +626,7 @@
     <h2 id="contact-heading">Contact</h2>
     <p class="contact-line" style="margin-top:24px">Open to research collaborations, internships and thesis work in machine learning. Based in Madrid, in Budapest from summer 2027.</p>
     <div class="links">
-      <a href="mailto:ermellinodavide@gmail.com">ermellinodavide@gmail.com</a>
+      <a href="mailto:ermellinodavide@proton.me">ermellinodavide@proton.me</a>
       <a href="tel:+393494103867">+39 349 410 3867</a>
       <a href="https://www.linkedin.com/in/davide-ermellino/">LinkedIn</a>
       <a href="https://github.com/Davidermellino">GitHub</a>
@@ -658,7 +652,7 @@
     laspalmas: {
       where: 'Las Palmas, Spain',
       when: 'Aug 2025 – Jan 2026',
-      what: 'Student researcher at ULPGC: runner bib recognition with YOLO and vision-language models, 98% accurate and 80% faster than doing it by hand.'
+      what: 'Student researcher at ULPGC: runner bib recognition with YOLO and vision-language models, 98% accurate across several camera views.'
     },
     madrid: {
       where: 'Madrid, Spain',
