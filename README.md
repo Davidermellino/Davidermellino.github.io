@@ -1,8 +1,8 @@
 # Davidermellino.github.io
 
-Personal portfolio: Davide Ermellino, MSc Data Science student, ML and backend engineering.
+Personal portfolio: Davide Ermellino, M.Sc. Data Science student (EIT Digital, UPM Madrid and ELTE Budapest) and research assistant at GSI, UPM.
 
-Single self-contained `index.html` (HTML + inlined CSS). No build step, no dependencies. Only external request is Google Fonts.
+Single self-contained `index.html` (HTML + inlined CSS and JS). No build step, no dependencies. Only external request is Google Fonts. City photographs in `img/` come from Wikimedia Commons; credits are in the page footer.
 
 ## Run locally
 ```
