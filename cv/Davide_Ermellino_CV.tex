@@ -1,0 +1,195 @@
+%-------------------------
+% Davide Ermellino, CV
+% Based on Jake Gutierrez's resume template (MIT)
+%-------------------------
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\else
+  \usepackage{fontspec}
+\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-.6in}
+\addtolength{\textheight}{1.3in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+\titlespacing*{\section}{0pt}{9pt}{7pt}
+
+
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, topsep=1pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in, topsep=1pt, itemsep=0pt, parsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Davide Ermellino} \\ \vspace{1pt}
+    \small +39 349 410 3867 $|$ \href{mailto:ermellinodavide@proton.me}{ermellinodavide@proton.me} $|$
+    \href{https://www.linkedin.com/in/davide-ermellino/}{linkedin.com/in/davide-ermellino} $|$
+    Budapest, HU (from summer 2027)
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {E\"otv\"os Lor\'and University (ELTE)}{Sep 2027 -- Jul 2028}
+      {M.Sc. Data Science, EIT Digital Master School (double degree, year 2)}{Budapest, HU}
+      \resumeItemListStart
+        \resumeItem{Coursework: Deep Network Development, Network Science, Stream Mining, Image Processing, Open-source Technologies for Data Science}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Universidad Polit\'ecnica de Madrid (UPM)}{Sep 2026 -- Jul 2027}
+      {M.Sc. Data Science, EIT Digital Master School (double degree)}{Madrid, ES}
+      \resumeItemListStart
+        \resumeItem{Minor in Innovation \& Entrepreneurship}
+        \resumeItem{Coursework: Statistical Data Analysis, Data Processes, Cloud Computing and Big Data Ecosystems Design, Generative AI and Language Models, Intelligent Systems, Information Retrieval}
+      \resumeItemListEnd
+    \resumeSubheading
+      {University of Cagliari}{Oct 2023 -- Jul 2026}
+      {B.Sc. Applied Computer Science and Data Analytics, 110/110 cum laude}{Cagliari, IT}
+      \resumeItemListStart
+        \resumeItem{Coursework: Computational Statistics, Machine Learning, Data Structures and Algorithms, Deep Learning, Big Data}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Aulab}{Jun 2023 -- Sep 2023}
+      {Full-Stack Web Developer Bootcamp (400 h) and React Masterclass (50 h)}{Bari, IT}
+      \resumeItemListStart
+        \resumeItem{Coursework: JavaScript, React, PHP/Laravel, HTML/CSS, Agile/Scrum}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Intelligent Systems Group (GSI), Universidad Polit\'ecnica de Madrid}{Oct 2026 -- Present}
+      {Research Assistant (part-time)}{Madrid, ES}
+      \resumeItemListStart
+        \resumeItem{Work on HumAMI, a Horizon Europe project on agentic and edge AI for physical products, such as industrial machines and robots.}
+        \resumeItem{Develop agent-based simulation and multi-agent system components in Python.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {RE/MAX}{Apr 2026 -- Jul 2026}
+      {Data Scientist}{}
+      \resumeItemListStart
+        \resumeItem{Built a dataset of all 308 Portuguese municipalities from demographic and geospatial sources as input for real estate valuation models, plus an interactive D3.js dashboard for stakeholders.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {University of Cagliari}{Jan 2026 -- Jun 2026}
+      {Undergraduate Student Researcher}{Cagliari, IT}
+      \resumeItemListStart
+        \resumeItem{Designed a validation and refinement loop for an LLM agent that writes Unity C\# code, raising the compilation rate by 53\% over the unvalidated baseline.}
+        \resumeItem{Built a ground-truth dataset for the Planner and Executor agents of the XAGE pipeline and scored generated code with CodeBLEU and template precision/recall.}
+        \resumeItem{Tested the scripts in VR scenes in Viroo. Full abstract at SIREM; full paper to be published in JIMTLT.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Universidad de Las Palmas de Gran Canaria}{Aug 2025 -- Jan 2026}
+      {Undergraduate Student Researcher}{Las Palmas, ES}
+      \resumeItemListStart
+        \resumeItem{Built a runner bib recognition system with vision-language models (VLMs) that reached 98\% accuracy.}
+        \resumeItem{Combined YOLO detection with VLMs across several camera views, cutting manual runner identification time by 80\%.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {University of Cagliari}{Oct 2024 -- Feb 2025}
+      {Research Assistant}{Cagliari, IT}
+      \resumeItemListStart
+        \resumeItem{Built a JavaScript GUI for a research tool on automatic citation, and wrote Python motion algorithms for a robot that cuts stains out of pizza boxes.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{Energy Fraud Detection with Deep Learning}}{Python, PyTorch}
+      \resumeItemListStart
+        \resumeItem{Built a fraud and anomaly detection pipeline on smart meter data: LSTM autoencoders turn five time series per meter (consumption, outages, alarms, maintenance, contract data) into embeddings, which DNN and tree-based classifiers label as regular, anomalous or fraudulent.}
+        \resumeItem{On a heavily imbalanced dataset, a soft-voting DNN ensemble reached 0.57 weighted recall against 0.03 for the tree-based models.}
+      \resumeItemListEnd
+    \resumeProjectHeading
+      {\textbf{Reinforcement Learning with PandaGym}}{Python, TensorFlow}
+      \resumeItemListStart
+        \resumeItem{Implemented several RL algorithms to control a robotic arm on reach and push tasks, reaching over 95\% success rate.}
+      \resumeItemListEnd
+    \resumeProjectHeading
+      {\textbf{Real-time Red Light Violation Detection}}{Python, YOLO, OpenCV}
+      \resumeItemListStart
+        \resumeItem{Built a real-time pipeline that reads the licence plates of cars running red lights, cutting manual monitoring time and cost by 70\%.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------HONORS-----------
+\section{Honors and Awards}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     Semifinal winner, EIT Digital Master School Business Challenge (Oct 2026): handled the team's financial plan for the Wayyo case. \\[2pt]
+     LeadTheFuture mentee: selected by the STEM mentorship non-profit for Italian students (acceptance rate under 15\%).
+    }}
+ \end{itemize}
+
+%-----------SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming:} Python, C, R, SQL, JavaScript \\[2pt]
+     \textbf{ML \& Data:} PyTorch, TensorFlow, scikit-learn, LangChain, OpenCV, D3.js, PostgreSQL/PostGIS \\[2pt]
+     \textbf{Languages:} Italian (native), English (C1), Spanish (A2), Hungarian (A1)
+    }}
+ \end{itemize}
+
+\end{document}

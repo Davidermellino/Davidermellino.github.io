@@ -12,3 +12,6 @@ Open `http://localhost:8000/`.
 
 ## Deploy
 GitHub Pages, `main` branch root. `.nojekyll` disables Jekyll processing.
+
+## CV
+LaTeX source in `cv/Davide_Ermellino_CV.tex`. Build with `tectonic cv/Davide_Ermellino_CV.tex` and copy the PDF to the repo root.
